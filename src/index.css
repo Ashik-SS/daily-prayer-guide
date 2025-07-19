@@ -8,35 +8,42 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 26% 14%;
+    --foreground: 45 100% 88%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 20% 16%;
+    --card-foreground: 45 90% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 20% 16%;
+    --popover-foreground: 45 90% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 45 85% 58%;
+    --primary-foreground: 220 26% 14%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 15% 22%;
+    --secondary-foreground: 45 75% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 12% 25%;
+    --muted-foreground: 220 8% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 200 25% 35%;
+    --accent-foreground: 45 90% 90%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 65% 55%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 12% 25%;
+    --input: 220 12% 25%;
+    --ring: 45 85% 58%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Prayer Time Design System */
+    --prayer-gradient: linear-gradient(135deg, hsl(220 26% 14%), hsl(220 20% 20%));
+    --prayer-card-gradient: linear-gradient(145deg, hsl(220 20% 16%), hsl(220 15% 20%));
+    --prayer-accent-gradient: linear-gradient(90deg, hsl(45 85% 58%), hsl(35 80% 60%));
+    --prayer-time-shadow: 0 8px 32px hsla(220 26% 14% / 0.4);
+    --prayer-glow: 0 0 20px hsla(45 85% 58% / 0.2);
 
     --sidebar-background: 0 0% 98%;
 

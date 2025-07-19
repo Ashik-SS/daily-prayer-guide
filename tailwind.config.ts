@@ -63,6 +63,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			backgroundImage: {
+				'prayer-gradient': 'var(--prayer-gradient)',
+				'prayer-card-gradient': 'var(--prayer-card-gradient)',
+				'prayer-accent-gradient': 'var(--prayer-accent-gradient)'
+			},
+			boxShadow: {
+				'prayer-card': 'var(--prayer-time-shadow)',
+				'prayer-glow': 'var(--prayer-glow)'
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
