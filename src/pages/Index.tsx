@@ -2,10 +2,13 @@ import { Compass, MapPin } from 'lucide-react';
 import { PrayerTimeCard } from '@/components/PrayerTimeCard';
 import { CurrentTimeDisplay } from '@/components/CurrentTimeDisplay';
 import { NextPrayerCountdown } from '@/components/NextPrayerCountdown';
+import { AlarmControls } from '@/components/AlarmControls';
 import { usePrayerTimes } from '@/hooks/usePrayerTimes';
+import { usePrayerAlarm } from '@/hooks/usePrayerAlarm';
 
 const Index = () => {
-  const { prayerTimes, nextPrayer } = usePrayerTimes();
+  const { playAlarm } = usePrayerAlarm();
+  const { prayerTimes, nextPrayer } = usePrayerTimes(playAlarm);
 
   const getCurrentPrayerStatus = (prayerDate: Date) => {
     const now = new Date();
@@ -41,6 +44,11 @@ const Index = () => {
             />
           </div>
         )}
+
+        {/* Alarm Controls */}
+        <div className="mb-8">
+          <AlarmControls />
+        </div>
 
         {/* Prayer Times Grid */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
