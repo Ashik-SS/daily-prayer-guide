@@ -50,23 +50,6 @@ export function AlarmControls() {
               </div>
             </div>
 
-            {/* Sound Selection */}
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Sound</label>
-              <Select
-                value={settings.sound}
-                onValueChange={(sound) => updateSettings({ sound })}
-              >
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="adhan">Traditional Adhan</SelectItem>
-                  <SelectItem value="bell">Bell</SelectItem>
-                  <SelectItem value="chime">Chime</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
 
             {/* Test/Stop Buttons */}
             <div className="flex gap-2">

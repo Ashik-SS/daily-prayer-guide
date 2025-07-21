@@ -4,14 +4,12 @@ import { useToast } from '@/hooks/use-toast';
 interface AlarmSettings {
   enabled: boolean;
   volume: number;
-  sound: string;
 }
 
 export function usePrayerAlarm() {
   const [settings, setSettings] = useState<AlarmSettings>({
     enabled: true,
-    volume: 0.7,
-    sound: 'adhan'
+    volume: 0.7
   });
   
   const [isPlaying, setIsPlaying] = useState(false);
@@ -109,20 +107,4 @@ export function usePrayerAlarm() {
     updateSettings,
     testAlarm
   };
-}
-
-function getAudioSource(soundType: string): string {
-  // For demo purposes, we'll use Web Audio API to generate a simple tone
-  // In a real app, you'd host actual adhan/prayer call audio files
-  
-  // Create a simple beep sound using data URI
-  const beepSound = 'data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBjuCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
-  
-  const sounds: Record<string, string> = {
-    adhan: beepSound,
-    bell: beepSound,
-    chime: beepSound
-  };
-  
-  return sounds[soundType] || sounds.adhan;
 }
