@@ -38,16 +38,24 @@ export function usePrayerAlarm() {
   }, []);
 
   const playAlarm = async (prayerName: string) => {
-    if (!settings.enabled || !audioRef.current) return;
+    if (!settings.enabled) return;
 
     try {
-      // In a real app, you'd use actual audio files
-      // For demo, we'll use a simple tone or notification sound
-      audioRef.current.src = getAudioSource(settings.sound);
-      audioRef.current.volume = settings.volume;
+      // Create a simple beep sound using Web Audio API
+      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      
+      oscillator.frequency.setValueAtTime(800, audioContext.currentTime); // 800 Hz tone
+      gainNode.gain.setValueAtTime(settings.volume, audioContext.currentTime);
       
       setIsPlaying(true);
-      await audioRef.current.play();
+      
+      oscillator.start();
+      oscillator.stop(audioContext.currentTime + 2); // Play for 2 seconds
       
       // Show notification
       toast({
@@ -56,10 +64,10 @@ export function usePrayerAlarm() {
         duration: 5000,
       });
 
-      // Auto-stop after 30 seconds
+      // Auto-stop after 2 seconds
       setTimeout(() => {
-        stopAlarm();
-      }, 30000);
+        setIsPlaying(false);
+      }, 2000);
 
     } catch (error) {
       console.error('Failed to play alarm:', error);
