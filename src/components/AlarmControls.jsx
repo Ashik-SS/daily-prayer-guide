@@ -1,9 +1,8 @@
-import { Volume2, VolumeX, Settings, TestTube, StopCircle, Play } from 'lucide-react';
+import { Volume2, VolumeX, Settings, TestTube, StopCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { Slider } from '@/components/ui/slider';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { usePrayerAlarm } from '@/hooks/usePrayerAlarm';
 
 export function AlarmControls() {
@@ -49,7 +48,6 @@ export function AlarmControls() {
                 {Math.round(settings.volume * 100)}%
               </div>
             </div>
-
 
             {/* Test/Stop Buttons */}
             <div className="flex gap-2">

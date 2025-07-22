@@ -1,15 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 
-export interface PrayerTime {
-  name: string;
-  time: string;
-  date: Date;
-}
-
-export function usePrayerTimes(onPrayerTime?: (prayerName: string) => void) {
-  const [prayerTimes, setPrayerTimes] = useState<PrayerTime[]>([]);
-  const [nextPrayer, setNextPrayer] = useState<PrayerTime | null>(null);
-  const checkedPrayersRef = useRef<Set<string>>(new Set());
+export function usePrayerTimes(onPrayerTime) {
+  const [prayerTimes, setPrayerTimes] = useState([]);
+  const [nextPrayer, setNextPrayer] = useState(null);
+  const checkedPrayersRef = useRef(new Set());
 
   useEffect(() => {
     // Get today's prayer times (simplified calculation for demo)
@@ -48,7 +42,7 @@ export function usePrayerTimes(onPrayerTime?: (prayerName: string) => void) {
   return { prayerTimes, nextPrayer };
 }
 
-function calculatePrayerTimes(date: Date): PrayerTime[] {
+function calculatePrayerTimes(date) {
   // Simplified prayer time calculation for demo purposes
   // In a real app, you'd use a proper prayer time calculation library
   const today = new Date(date);

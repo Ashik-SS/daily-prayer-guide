@@ -1,19 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
-interface AlarmSettings {
-  enabled: boolean;
-  volume: number;
-}
-
 export function usePrayerAlarm() {
-  const [settings, setSettings] = useState<AlarmSettings>({
+  const [settings, setSettings] = useState({
     enabled: true,
     volume: 0.7
   });
   
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioRef = useRef(null);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -35,12 +30,12 @@ export function usePrayerAlarm() {
     };
   }, []);
 
-  const playAlarm = async (prayerName: string) => {
+  const playAlarm = async (prayerName) => {
     if (!settings.enabled) return;
 
     try {
       // Create a simple beep sound using Web Audio API
-      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
       const oscillator = audioContext.createOscillator();
       const gainNode = audioContext.createGain();
       
@@ -85,7 +80,7 @@ export function usePrayerAlarm() {
     setIsPlaying(false);
   };
 
-  const updateSettings = (newSettings: Partial<AlarmSettings>) => {
+  const updateSettings = (newSettings) => {
     const updated = { ...settings, ...newSettings };
     setSettings(updated);
     localStorage.setItem('prayerAlarmSettings', JSON.stringify(updated));

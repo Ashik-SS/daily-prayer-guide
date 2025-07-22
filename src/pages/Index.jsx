@@ -10,7 +10,7 @@ const Index = () => {
   const { playAlarm } = usePrayerAlarm();
   const { prayerTimes, nextPrayer } = usePrayerTimes(playAlarm);
 
-  const getCurrentPrayerStatus = (prayerDate: Date) => {
+  const getCurrentPrayerStatus = (prayerDate) => {
     const now = new Date();
     return {
       isPassed: prayerDate < now,

@@ -12,7 +12,7 @@ export function CurrentTimeDisplay() {
     return () => clearInterval(timer);
   }, []);
 
-  const formatTime = (date: Date) => {
+  const formatTime = (date) => {
     return date.toLocaleTimeString('en-US', {
       hour: '2-digit',
       minute: '2-digit',
@@ -21,7 +21,7 @@ export function CurrentTimeDisplay() {
     });
   };
 
-  const formatDate = (date: Date) => {
+  const formatDate = (date) => {
     return date.toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
@@ -33,12 +33,12 @@ export function CurrentTimeDisplay() {
   return (
     <Card className="p-6 bg-prayer-card-gradient border-border/50 shadow-prayer-card text-center">
       <div className="space-y-2">
-        <p className="text-muted-foreground text-sm font-medium">
-          {formatDate(currentTime)}
-        </p>
-        <p className="text-4xl font-bold text-primary">
+        <div className="text-4xl md:text-5xl font-bold text-foreground font-mono tracking-wider">
           {formatTime(currentTime)}
-        </p>
+        </div>
+        <div className="text-muted-foreground text-lg">
+          {formatDate(currentTime)}
+        </div>
       </div>
     </Card>
   );
