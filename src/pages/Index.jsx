@@ -44,7 +44,6 @@ const Index = () => {
             </div>
             <div className="text-left">
               <div className="text-sm text-muted-foreground/60">Location</div>
-              <div className="font-semibold text-foreground">Auto-detected</div>
             </div>
           </div>
         </div>
