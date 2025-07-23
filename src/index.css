@@ -39,13 +39,25 @@ All colors MUST be HSL.
     --radius: 1rem;
 
     /* Enhanced Prayer Time Design System */
-    --prayer-gradient: radial-gradient(ellipse at top, hsl(235 20% 9%), hsl(265 25% 15%));
-    --prayer-card-gradient: linear-gradient(145deg, hsl(230 18% 12%), hsl(240 20% 16%));
+    --prayer-primary: 158 64% 52%;
+    --prayer-emerald: 158 64% 52%;
+    --prayer-emerald-light: 158 50% 65%;
+    --prayer-gold: 42 87% 55%;
+    --prayer-gold-light: 45 93% 58%;
+    
+    --prayer-gradient: radial-gradient(ellipse at top, hsl(235 15% 8%), hsl(240 20% 12%));
+    --prayer-card-gradient: linear-gradient(145deg, hsl(230 18% 11% / 0.9), hsl(240 20% 14% / 0.95));
     --prayer-accent-gradient: linear-gradient(135deg, hsl(40 95% 68%), hsl(280 45% 45%));
-    --prayer-hero-gradient: linear-gradient(180deg, hsl(235 20% 9%) 0%, hsl(265 25% 15%) 50%, hsl(280 30% 18%) 100%);
+    --prayer-emerald-gradient: linear-gradient(135deg, hsl(158 64% 52%), hsl(158 50% 65%));
+    --prayer-gold-gradient: linear-gradient(135deg, hsl(42 87% 55%), hsl(45 93% 58%));
+    --prayer-hero-gradient: radial-gradient(ellipse at top, hsl(235 15% 8%), hsl(240 18% 10%)), 
+                           linear-gradient(135deg, hsl(158 64% 52% / 0.05), hsl(42 87% 55% / 0.03));
+    
     --prayer-time-shadow: 0 12px 40px hsla(235 20% 9% / 0.6);
-    --prayer-glow: 0 0 30px hsla(40 95% 68% / 0.15);
-    --prayer-soft-glow: 0 4px 20px hsla(280 45% 45% / 0.1);
+    --prayer-glow: 0 0 40px hsla(158 64% 52% / 0.3), 0 0 80px hsla(42 87% 55% / 0.15);
+    --prayer-intense-glow: 0 0 60px hsla(158 64% 52% / 0.5), 0 0 120px hsla(42 87% 55% / 0.2);
+    --prayer-soft-glow: 0 4px 20px hsla(158 64% 52% / 0.15);
+    --prayer-card: 0 8px 32px hsla(235 15% 4% / 0.4), 0 4px 16px hsla(240 18% 6% / 0.2);
 
     --sidebar-background: 0 0% 98%;
 

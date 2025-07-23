@@ -29,18 +29,27 @@ const Index = () => {
 
       <div className="container mx-auto px-4 py-12 relative z-10">
         {/* Hero Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="relative inline-block mb-6">
-            <h1 className="text-6xl md:text-7xl font-bold bg-prayer-accent-gradient bg-clip-text text-transparent animate-glow">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="relative inline-block mb-8">
+            <div className="absolute -inset-8 bg-prayer-intense-glow rounded-full blur-3xl opacity-20 animate-glow"></div>
+            <h1 className="relative text-7xl md:text-8xl font-bold bg-prayer-emerald-gradient bg-clip-text text-transparent animate-glow leading-none">
               Prayer Times
             </h1>
-            <div className="absolute -inset-4 bg-prayer-glow rounded-full blur-xl opacity-30 animate-glow"></div>
+            <div className="absolute inset-0 bg-prayer-gold-gradient bg-clip-text text-transparent opacity-0 animate-shimmer"></div>
           </div>
-          <div className="flex items-center justify-center gap-3 text-muted-foreground/80 text-lg">
-            <div className="p-2 bg-card/50 rounded-full border border-border/50 shadow-prayer-soft-glow">
-              <MapPin className="w-5 h-5 text-primary" />
+          
+          <p className="text-xl text-muted-foreground/70 mb-6 max-w-2xl mx-auto leading-relaxed">
+            Stay connected with your daily prayers through beautiful, precise timing
+          </p>
+          
+          <div className="flex items-center justify-center gap-4 text-muted-foreground/80 text-lg">
+            <div className="p-3 bg-card/60 backdrop-blur-sm rounded-2xl border border-border/30 shadow-prayer-card animate-pulse-glow">
+              <MapPin className="w-6 h-6 text-primary" />
             </div>
-            <span className="font-medium">Current Location</span>
+            <div className="text-left">
+              <div className="text-sm text-muted-foreground/60">Location</div>
+              <div className="font-semibold text-foreground">Current Position</div>
+            </div>
           </div>
         </div>
 
@@ -72,10 +81,20 @@ const Index = () => {
         </div>
 
         {/* Prayer Times Section */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Today's Prayer Schedule</h2>
-            <div className="w-24 h-1 bg-prayer-accent-gradient rounded-full mx-auto"></div>
+        <div className="mb-20">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-6 relative">
+              Today's Prayer Schedule
+              <div className="absolute -inset-2 bg-prayer-glow rounded-lg blur-xl opacity-10"></div>
+            </h2>
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="w-12 h-1 bg-prayer-emerald-gradient rounded-full"></div>
+              <div className="w-3 h-3 bg-prayer-gold-gradient rounded-full animate-glow"></div>
+              <div className="w-12 h-1 bg-prayer-emerald-gradient rounded-full"></div>
+            </div>
+            <p className="text-muted-foreground/70 max-w-lg mx-auto">
+              Five daily prayers that guide your spiritual journey
+            </p>
           </div>
           
           {/* Prayer Times Grid */}
@@ -102,13 +121,17 @@ const Index = () => {
 
         {/* Bottom Section - Qibla Direction */}
         <div className="text-center animate-fade-in" style={{ animationDelay: '1.5s' }}>
-          <div className="inline-flex items-center gap-4 bg-card/80 backdrop-blur-sm px-8 py-4 rounded-2xl border border-border/50 shadow-prayer-card">
-            <div className="p-3 bg-primary/10 rounded-full">
-              <Compass className="w-6 h-6 text-primary animate-glow" />
-            </div>
-            <div className="text-left">
-              <div className="text-sm text-muted-foreground">Qibla Direction</div>
-              <div className="text-xl font-bold text-foreground">57° Northeast</div>
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-prayer-emerald-gradient rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+            <div className="relative inline-flex items-center gap-6 bg-card/90 backdrop-blur-md px-10 py-6 rounded-3xl border border-border/30 shadow-prayer-card">
+              <div className="p-4 bg-prayer-emerald-gradient rounded-2xl shadow-prayer-soft-glow">
+                <Compass className="w-8 h-8 text-white animate-glow" />
+              </div>
+              <div className="text-left">
+                <div className="text-sm text-muted-foreground/80 uppercase tracking-wider">Qibla Direction</div>
+                <div className="text-2xl font-bold text-foreground">57° Northeast</div>
+                <div className="text-xs text-primary">Makkah, Saudi Arabia</div>
+              </div>
             </div>
           </div>
         </div>
