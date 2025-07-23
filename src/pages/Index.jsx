@@ -38,10 +38,6 @@ const Index = () => {
             <div className="absolute inset-0 bg-prayer-gold-gradient bg-clip-text text-transparent opacity-0 animate-shimmer"></div>
           </div>
           
-          <p className="text-xl text-muted-foreground/70 mb-6 max-w-2xl mx-auto leading-relaxed">
-            Stay connected with your daily prayers through beautiful, precise timing
-          </p>
-          
           <div className="flex items-center justify-center gap-4 text-muted-foreground/80 text-lg">
             <div className="p-3 bg-card/60 backdrop-blur-sm rounded-2xl border border-border/30 shadow-prayer-card animate-pulse-glow">
               <MapPin className="w-6 h-6 text-primary" />
